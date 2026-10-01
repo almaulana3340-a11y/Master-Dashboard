@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Dashboard Pro</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #38bdf8;
+            font-size: 24px;
+            margin: 0;
+        }
+        .status-badge {
+            background-color: #22c55e;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+        .card .value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #f1f5f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Master Dashboard Pro</h1>
+            <div class="status-badge">ONLINE & LIVE</div>
+        </header>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>System Status</h3>
+                <div class="value" style="color: #22c55e;">Operational</div>
+            </div>
+            <div class="card">
+                <h3>Environment</h3>
+                <div class="value">Render Cloud</div>
+            </div>
+            <div class="card">
+                <h3>Version</h3>
+                <div class="value">v1.0.0 Pro</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

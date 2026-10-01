@@ -1,10 +1,11 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Laluan asas (Route) supaya pelayar web tak keluar ralat Cannot GET /
+// Laluan untuk menghantar fail index.html apabila dilayari
 app.get('/', (req, res) => {
-  res.send('Master Dashboard Pro is live!');
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(PORT, () => {
