@@ -65,25 +65,48 @@
 <body>
     <div class="container">
         <header>
-            <h1>🚀 Master Dashboard Pro</h1>
-            <div class="status-badge">ONLINE & LIVE</div>
+            <h1 id="project-title">🚀 Master Dashboard Pro</h1>
+            <div id="status-badge" class="status-badge">LOADING...</div>
         </header>
 
         <div class="card-grid">
             <div class="card">
-                <h3>System Status</h3>
-                <div class="value" style="color: #22c55e;">Operational</div>
+                <h3>CPU Usage</h3>
+                <div class="value" id="cpu-usage">-</div>
             </div>
             <div class="card">
-                <h3>Environment</h3>
-                <div class="value">Render Cloud</div>
+                <h3>Memory Usage</h3>
+                <div class="value" id="memory-usage">-</div>
             </div>
             <div class="card">
-                <h3>Version</h3>
-                <div class="value">v1.0.0 Pro</div>
+                <h3>Active Users</h3>
+                <div class="value" id="active-users">-</div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Fungsi untuk mengambil data dari endpoint /api/data
+        async function fetchDashboardData() {
+            try {
+                const response = await fetch('/api/data');
+                const data = await response.json();
+
+                // Kemas kini paparan HTML dengan data sebenar
+                document.getElementById('project-title').innerText = `🚀 ${data.projectName} (${data.version})`;
+                document.getElementById('status-badge').innerText = data.status.toUpperCase();
+                document.getElementById('cpu-usage').innerText = data.metrics.cpuUsage;
+                document.getElementById('memory-usage').innerText = data.metrics.memoryUsage;
+                document.getElementById('active-users').innerText = data.metrics.activeUsers;
+            } catch (error) {
+                console.error('Gagal memuatkan data:', error);
+                document.getElementById('status-badge').innerText = 'ERROR';
+            }
+        }
+
+        // Panggil fungsi semasa halaman dimuatkan
+        fetchDashboardData();
+    </script>
 </body>
 </html>
 
