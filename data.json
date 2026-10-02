@@ -1,1 +1,11 @@
-activeUser/cpuUsage"2,500"["45%")]
+{
+  "projectName": "Master Dashboard Pro",
+  "version": "v1.0",
+  "status": "online",
+  "metrics": {
+    "cpuUsage": "45%",
+    "memoryUsage": "4.2 GB",
+    "activeUsers": "2,500"
+  }
+}
+
